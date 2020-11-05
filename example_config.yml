@@ -1,0 +1,10 @@
+url : target_url
+username: your_user_name
+password: your_password
+xpath_user_name: correct_xpath
+xpath_password: correct_xpath
+xpath_login: correct_xpath
+xpath_login_close: correct_xpath
+xpath_login_click: correct_xpath
+xpath_find_log_in: correct_xpath
+webdriver: your_chromedriver_path
