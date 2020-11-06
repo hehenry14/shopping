@@ -46,6 +46,7 @@ while not have_purchased:
         # click log in
         login_button = browser.find_elements_by_xpath(cfg['xpath_login_click'])[0]
         login_button.click()
+        browser.close()
 
     # pause every 60 to 120 seconds
     time.sleep(60 + random.randint(0, 60))
