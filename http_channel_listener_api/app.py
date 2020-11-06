@@ -10,6 +10,8 @@ with open(r'.cfg.yml') as file:
     cfg = yaml.safe_load(file)
 
 url = cfg['url']
+
+# replace this with the trigger of your choice
 trigger_string = 'Uit eigen voorraad leverbaar. Levertijd: 1 dag'
 tsb = trigger_string.encode()
 

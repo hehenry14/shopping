@@ -16,15 +16,12 @@ with open(r'.cfg.yml') as file:
 have_purchased = False
 while not have_purchased:
     page = urllib.request.urlopen('http://127.0.0.1:5000/')
-    have_stock = bool(page.read())
-    print(have_stock)
 
+    page.read() # without this line it won't work, dont know why yet.
+    have_stock = bool(page.read())
     # log and show the status of the program
     status = str(datetime.now()) + ' checking whether it is in stock, result is: ' + str(have_stock)
-    purchase_status = str(datetime.now()) + ' checking purchase has already been made, result is: ' + str(have_purchased)
-    #print(status)
     logging.debug(status)
-    logging.debug(purchase_status)
 
     # if have stock, make purchase
     if have_stock:
