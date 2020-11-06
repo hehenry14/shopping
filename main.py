@@ -16,7 +16,8 @@ with open(r'.cfg.yml') as file:
 have_purchased = False
 while not have_purchased:
     page = urllib.request.urlopen('http://127.0.0.1:5000/')
-    have_stock = bool(page.read().decode('utf-8'))
+    have_stock = bool(page.read())
+    print(have_stock)
 
     # log and show the status of the program
     status = str(datetime.now()) + ' checking whether it is in stock, result is: ' + str(have_stock)
@@ -24,9 +25,6 @@ while not have_purchased:
     #print(status)
     logging.debug(status)
     logging.debug(purchase_status)
-
-    # pause every 60 to 120 seconds
-    time.sleep(60+random.randint(0,60))
 
     # if have stock, make purchase
     if have_stock:
@@ -51,3 +49,6 @@ while not have_purchased:
         # click log in
         login_button = browser.find_elements_by_xpath(cfg['xpath_login_click'])[0]
         login_button.click()
+
+    # pause every 60 to 120 seconds
+    time.sleep(60 + random.randint(0, 60))
