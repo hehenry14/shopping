@@ -1,7 +1,6 @@
 from flask import Flask
 import yaml
 import urllib.request
-from flask_restful import Resource, Api
 
 # set up the flask module
 app = Flask(__name__)
