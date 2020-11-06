@@ -19,8 +19,9 @@ def hello():
     page = urllib.request.urlopen(url)
     load_page = page.read()
     if tsb in load_page:
-        return "True"
-    return "False"
+        return "False"
+    return "True"
+
 # main function do python app.py to run it
 if __name__ == '__main__':
     app.run()
