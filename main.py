@@ -17,7 +17,7 @@ with open(r'.cfg.yml') as file:
 have_purchased = False
 
 # config release date (5 min before the actual time):
-five_min_before_release = datetime(2020, 11, 18, 12, 0, 6, 0)
+five_min_before_release = datetime(2020, 11, 18, 12, 0, 0, 0)
 
 if __name__ == '__main__':
     print('Press ctl + c to stop the program')
