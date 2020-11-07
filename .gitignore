@@ -5,3 +5,4 @@ chromedriver.exe
 applog.log
 debug.log
 venv
+purchase.py

@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import yaml
 import urllib.request
 
@@ -23,6 +23,10 @@ def hello():
     if tsb in load_page:
         return "True"
     return "False"
+
+@app.route('/alert')
+def alert():
+    return render_template('alert.html')
 
 # main function do python app.py to run it
 if __name__ == '__main__':
