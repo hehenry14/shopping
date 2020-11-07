@@ -4,3 +4,4 @@ chromedriver.exe
 /http_channel_listener_api/.cfg.yml
 applog.log
 debug.log
+venv
