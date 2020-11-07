@@ -16,7 +16,7 @@ with open(r'.cfg.yml') as file:
 
 have_purchased = False
 
-# config release date (5 min before the actual time):
+# config release date to the correct one:
 release_date = datetime(2020, 11, 18, 12, 0, 0, 0)
 five_min_before_release = release_date - timedelta(minutes=5)
 
