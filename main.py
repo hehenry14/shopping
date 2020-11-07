@@ -3,7 +3,7 @@ from selenium import webdriver
 import time
 import yaml
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 import random
 import easygui
 
@@ -17,7 +17,8 @@ with open(r'.cfg.yml') as file:
 have_purchased = False
 
 # config release date (5 min before the actual time):
-five_min_before_release = datetime(2020, 11, 18, 12, 0, 0, 0)
+release_date = datetime(2020, 11, 18, 12, 0, 0, 0)
+five_min_before_release = release_date - timedelta(minutes=5)
 
 if __name__ == '__main__':
     print('Press ctl + c to stop the program')
@@ -26,13 +27,15 @@ if __name__ == '__main__':
         while not have_purchased:
             # check if it is released
             if datetime.now() < five_min_before_release:
-                logging.debug(str(datetime.now()) + ': the product have not yet been released, the program will automatically start 5 min before the release.')
+                logging.debug(str(datetime.now()) + ': the product have not yet been released, the program will ' +
+                                                    'automatically start 5 min before the release.')
                 # schedule the next checking at 5 min before the release
                 time.sleep(int((five_min_before_release - datetime.now()).total_seconds()))
             else:
                 have_stock = False
                 # Added an alert if the stock is available, you need to， optional
-                # message_box = easygui.msgbox("New hardware available! Click proceed to start purchasing", title="Purchase Alert")
+                # message_box = easygui.msgbox("New hardware available! Click proceed to start purchasing",
+                # title="Purchase Alert")
 
                 try:
                     page = urllib.request.urlopen('http://127.0.0.1:5000/')
