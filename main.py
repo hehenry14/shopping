@@ -5,6 +5,7 @@ import yaml
 import logging
 from datetime import datetime
 import random
+import easygui
 
 # set the logging
 logging.basicConfig(level=logging.DEBUG)
@@ -30,6 +31,9 @@ if __name__ == '__main__':
                 time.sleep(int((five_min_before_release - datetime.now()).total_seconds()))
             else:
                 have_stock = False
+                # Added an alert if the stock is available, you need to， optional
+                # message_box = easygui.msgbox("New hardware available! Click proceed to start purchasing", title="Purchase Alert")
+
                 try:
                     page = urllib.request.urlopen('http://127.0.0.1:5000/')
 

@@ -6,3 +6,4 @@ applog.log
 debug.log
 venv
 purchase.py
+short_script.py

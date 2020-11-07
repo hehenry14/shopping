@@ -1,12 +1,8 @@
-import yaml
-import logging
-import time
-from selenium import webdriver
+import easygui
+import tkinter.messagebox
 
-
-logging.basicConfig(level=logging.DEBUG)
-# load website
-browser = webdriver.Chrome(cfg['webdriver'])
+tkinter.messagebox.Message(message='123')
+print(1)
 
 
 
